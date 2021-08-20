@@ -14,7 +14,7 @@ export default class App extends React.Component {
     }
 
     async getCurrentUsers() {
-        const result = await fetch(`https://localhost:44369/api/Mailing/GetMailingListForUser?LastNameParameters=&SortingOrderParameters=`);
+        const result = await fetch(`https://localhost:44369/api/Mailing/GetMailingListWithParameters?LastNameParameters=&SortingOrderParameters=`);
         const data = await result.json();
         return data;
     }
