@@ -1,5 +1,6 @@
-﻿import UserList from '../js/UserList.jsx'
-import UserAccountForm from '../js/UserAccount.jsx'
+﻿import UserList from '../React/UserList.jsx'
+import UserAccountForm from '../React/UserAccount.jsx'
+import { getCurrentUsers} from '../React/Repository.jsx'
 
 export default class App extends React.Component {
     constructor(props) {
@@ -9,18 +10,11 @@ export default class App extends React.Component {
             users: [],
         };
 
-        this.getCurrentUsers = this.getCurrentUsers.bind(this);
         this.refreshEventHandler = this.refreshEventHandler.bind(this);
     }
 
-    async getCurrentUsers() {
-        const result = await fetch(`https://localhost:44369/api/Mailing/GetMailingListWithParameters?LastNameParameters=&SortingOrderParameters=`);
-        const data = await result.json();
-        return data;
-    }
-
     async refreshEventHandler() {
-        const users = await this.getCurrentUsers();
+        const users = await getCurrentUsers();
         this.setState({ users });
     }
 
@@ -36,7 +30,7 @@ export default class App extends React.Component {
                         <div className="d-flex justify-content-center">
                             <div className="text-center">
                                 <h1 className="mx-auto my-0 text-uppercase">Mailing</h1>
-                                <h2 className="text-white-50 mx-auto mt-2 mb-5">A react Application with .Net API</h2>
+                                <h2 className="text-white-50 mx-auto mt-2 mb-5">React Application with .Net API</h2>
                                 <a className="btn btn-primary" href="#signup">Get Started</a>
                                 <div className="row mt-5">
                                     {

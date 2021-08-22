@@ -3,24 +3,26 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailing", "Mailing\Mailing.csproj", "{C73CF8CB-2F99-484C-9D65-5DF729326244}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mailing", "Mailing\Mailing.csproj", "{C73CF8CB-2F99-484C-9D65-5DF729326244}"
 	ProjectSection(ProjectDependencies) = postProject
 		{66ED4037-340E-4453-B7CC-54F81388FD6B} = {66ED4037-340E-4453-B7CC-54F81388FD6B}
 		{685D5359-A01E-4648-A534-102364AA316B} = {685D5359-A01E-4648-A534-102364AA316B}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailing.Repository", "Mailing.Repository\Mailing.Repository.csproj", "{66ED4037-340E-4453-B7CC-54F81388FD6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mailing.MemoryRepository", "Mailing.Repository\Mailing.MemoryRepository.csproj", "{66ED4037-340E-4453-B7CC-54F81388FD6B}"
 	ProjectSection(ProjectDependencies) = postProject
 		{685D5359-A01E-4648-A534-102364AA316B} = {685D5359-A01E-4648-A534-102364AA316B}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailing.Models", "Mailing.Models\Mailing.Models.csproj", "{685D5359-A01E-4648-A534-102364AA316B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mailing.Models", "Mailing.Models\Mailing.Models.csproj", "{685D5359-A01E-4648-A534-102364AA316B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailing.Test", "Mailing.Test\Mailing.Test.csproj", "{E177D1AC-61A5-4851-A986-9AC2AAC1C36C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mailing.Test", "Mailing.Test\Mailing.Test.csproj", "{E177D1AC-61A5-4851-A986-9AC2AAC1C36C}"
 	ProjectSection(ProjectDependencies) = postProject
 		{66ED4037-340E-4453-B7CC-54F81388FD6B} = {66ED4037-340E-4453-B7CC-54F81388FD6B}
 		{685D5359-A01E-4648-A534-102364AA316B} = {685D5359-A01E-4648-A534-102364AA316B}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailing.CSVRepository", "mailing.CSVRepository\Mailing.CSVRepository.csproj", "{FC88CC98-642B-4EC0-89F9-665402927ACA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -62,6 +64,14 @@ Global
 		{E177D1AC-61A5-4851-A986-9AC2AAC1C36C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E177D1AC-61A5-4851-A986-9AC2AAC1C36C}.Release|x86.ActiveCfg = Release|Any CPU
 		{E177D1AC-61A5-4851-A986-9AC2AAC1C36C}.Release|x86.Build.0 = Release|Any CPU
+		{FC88CC98-642B-4EC0-89F9-665402927ACA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC88CC98-642B-4EC0-89F9-665402927ACA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC88CC98-642B-4EC0-89F9-665402927ACA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FC88CC98-642B-4EC0-89F9-665402927ACA}.Debug|x86.Build.0 = Debug|Any CPU
+		{FC88CC98-642B-4EC0-89F9-665402927ACA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC88CC98-642B-4EC0-89F9-665402927ACA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC88CC98-642B-4EC0-89F9-665402927ACA}.Release|x86.ActiveCfg = Release|Any CPU
+		{FC88CC98-642B-4EC0-89F9-665402927ACA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
