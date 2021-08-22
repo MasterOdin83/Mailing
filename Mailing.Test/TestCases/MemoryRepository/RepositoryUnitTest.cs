@@ -3,7 +3,6 @@ using NUnit.Framework;
 using Mailing.Models.Models;
 using Mailing.Repository;
 using System.Linq;
-using Mailing.Models;
 
 namespace Mailing.Test
 {

@@ -1,15 +1,9 @@
 ﻿using Mailing.Models.Models;
-using Mailing.Repository;
 using Mailing.Repository.Interfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Http;
-using System.Web.Http.Results;
 
 namespace Mailing.Controllers
 {
@@ -20,15 +14,20 @@ namespace Mailing.Controllers
         {
             this.Mailingrepository = Mailingrepository;
         }
-
         [HttpPost]
         public HttpStatusCode PostNewAccount(string lastName, string firstName, string emailAddress)
         {
-            var NewUser = new UserAccount(lastName, firstName, emailAddress);
-            Mailingrepository.InsertNewAccount(NewUser);
-            return HttpStatusCode.Created;
+            try
+            {
+                var NewUser = new UserAccount(lastName, firstName, emailAddress);
+                Mailingrepository.InsertNewAccount(NewUser);
+                return HttpStatusCode.Created;
+            }
+            catch
+            {
+                return HttpStatusCode.InternalServerError;
+            }
         }
-
         [HttpGet]
         public List<UserAccount> GetMailingListWithParameters(string LastNameParameters = "", bool SortingOrderParameters = true)
         {
