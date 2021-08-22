@@ -17,7 +17,12 @@ export default class UserAccountForm extends React.Component {
     }
 
     isReady() {
-        if (this.state.lastName && this.state.firstName && this.state.emailAddress)
+
+        const isLastNamePresent = this.state.lastName.length > 0;
+        const isFirstNamePresent = this.state.firstName.length > 0;
+        const isEmailAddressPresent = this.state.emailAddress.length > 0;
+
+        if (isLastNamePresent && isFirstNamePresent && isEmailAddressPresent)
             this.setState({ activeButton: true });
     }
 
@@ -28,7 +33,7 @@ export default class UserAccountForm extends React.Component {
         const emailAddress = this.state.emailAddress;
 
 
-        postNewUser( lastName , firstName , emailAddress );
+        postNewUser(lastName, firstName, emailAddress);
 
         Swal.fire("You're now subscribed").then(() => {
             this.setState({
@@ -45,18 +50,24 @@ export default class UserAccountForm extends React.Component {
     }
 
     updateInputLastName(evt) {
-        this.setState({ lastName: evt.target.value });
-        this.isReady();
+        this.setState({ lastName: evt.target.value }, () => {
+            this.isReady();
+        });
     }
 
     updateInputFirstName(evt) {
-        this.setState({ firstName: evt.target.value });
-        this.isReady();
+        this.setState({ firstName: evt.target.value }, () => {
+            this.isReady();
+        });
     }
 
     updateInputEmail(evt) {
-        this.setState({ emailAddress: evt.target.value });
-        this.isReady();
+        console.log(this.state.emailAddress);
+        console.log(evt.target.value);
+        this.setState({ emailAddress: evt.target.value }, () => {
+            this.isReady();
+        });
+        console.log(this.state.emailAddress);
     }
 
     render() {
