@@ -3,7 +3,6 @@ using NUnit.Framework;
 using Mailing.Models.Models;
 using Mailing.Repository;
 using System.Linq;
-using Mailing.Models;
 
 namespace Mailing.Test
 {
@@ -53,7 +52,6 @@ namespace Mailing.Test
             Assert.AreEqual(FirsUserFromList.Firstname, "Eduardo");
 
         }
-
         [Test]
         public void WhenSortingDesendingFirstReultLastNameStartsWith_Z()
         {
@@ -66,7 +64,6 @@ namespace Mailing.Test
             ///Assert
             Assert.AreEqual(FirsUserFromList.LastName, "Zapata");
         }
-
         [Test]
         public void WhenSortingDesendingFirstReultLastNameStartsWith_ZAndFirstNameIsNowSorted()
         {
@@ -80,7 +77,6 @@ namespace Mailing.Test
             Assert.AreEqual(FirsUserFromList.LastName, "Zapata");
             Assert.AreEqual(FirsUserFromList.Firstname, "Miguel");
         }
-
         [Test]
         public void WhenSearchingALastNameGome4ResultAreExpected()
         {
@@ -93,7 +89,6 @@ namespace Mailing.Test
             //Assert
             Assert.AreEqual(3, ResultsReceivedCount);
         }
-
         [Test]
         public void WhenSearchingALastNameGomez3ResultAreExpected()
         {
@@ -120,7 +115,6 @@ namespace Mailing.Test
             Assert.AreEqual(3, ResultsReceivedCount);
             Assert.AreEqual(FirstUserFromList.Firstname, "Adrian");
         }
-
         [Test]
         public void WhenSearchingALastNameGome4ResultAreExpectedAndSortingDescending()
         {
