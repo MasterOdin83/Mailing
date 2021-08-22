@@ -6,10 +6,10 @@ using System.Linq;
 
 namespace Mailing.Test
 {
-    public class MemoryRepositoryUnitTest
+    public class RepositoryUnitTest
     {
         private IMailingRepository Mailingrepository;
-        public MemoryRepositoryUnitTest()
+        public RepositoryUnitTest()
         {
             Mailingrepository = new MemoryRepository();
 

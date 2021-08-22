@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\js\app.jsx" />
+    <None Include="wwwroot\js\React\app.jsx" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,7 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Mailing.Repository\Mailing.Repository.csproj" />
+    <ProjectReference Include="..\mailing.CSVRepository\Mailing.CSVRepository.csproj" />
+    <ProjectReference Include="..\Mailing.Repository\Mailing.MemoryRepository.csproj" />
   </ItemGroup>
 
 </Project>

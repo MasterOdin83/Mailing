@@ -1,4 +1,6 @@
-﻿export default class UserAccountForm extends React.Component {
+﻿import { postNewUser } from '../React/Repository.jsx'
+
+export default class UserAccountForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -21,19 +23,25 @@
 
     submitHandler(e) {
         e.preventDefault();
+        const lastName = this.state.lastName;
+        const firstName = this.state.firstName;
+        const emailAddress = this.state.emailAddress;
 
-        let xhr = new XMLHttpRequest();
-        xhr.open('POST', `https://localhost:44369/api/Mailing/PostNewAccount?lastName=${this.state.lastName}&firstName=${this.state.firstName}&emailAddress=${this.state.emailAddress}`);
-        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        xhr.send();
-        Swal.fire("You're now subscribed").then(() => { });
-        this.setState({
-            lastName: "second user",
-            firstName: "second user",
-            emailAddress: "second@user.co",
-            activeButton: false
+
+        postNewUser( lastName , firstName , emailAddress );
+
+        Swal.fire("You're now subscribed").then(() => {
+            this.setState({
+                lastName: "second user",
+                firstName: "second user",
+                emailAddress: "second@user.co",
+                activeButton: false
+            });
+            document.documentElement.scrollTop = 0;
+            this.props.onSubmit();
         });
-        this.props.onSubmit();
+
+
     }
 
     updateInputLastName(evt) {
